@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #263244;
+  }
+  
+  body {
+    background-color: #0B0E14;
+    color: #E6EDF3;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0E14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #263244;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6A00;
+}
+
+/* Futuristic HUD Grid Background */
+.hud-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(38, 50, 68, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(38, 50, 68, 0.12) 1px, transparent 1px);
+}
+
+/* Subtle Technology-Inspired Page Module Transitions */
+@keyframes moduleTransition {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.page-module-enter {
+  animation: moduleTransition 210ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-module-enter {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Tactical Angular Tech Cut Corners */
+.tech-corner {
+  position: relative;
+}
+
+.tech-corner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #00D4FF;
+  border-left: 2px solid #00D4FF;
+  pointer-events: none;
+}
+
+.tech-corner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  border-bottom: 2px solid #FF6A00;
+  border-right: 2px solid #FF6A00;
+  pointer-events: none;
+}
+
+/* Cyan Corner Variant */
+.tech-corner-cyan {
+  position: relative;
+}
+
+.tech-corner-cyan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #00D4FF;
+  border-left: 2px solid #00D4FF;
+  pointer-events: none;
+}
+
+.tech-corner-cyan::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  border-bottom: 2px solid #00D4FF;
+  border-right: 2px solid #00D4FF;
+  pointer-events: none;
+}
+
+/* Restrained Glassmorphism Surface */
+.hud-panel {
+  background: rgba(21, 29, 41, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid #263244;
+}
+
+/* Skeleton Loading Shimmer */
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(21, 29, 41, 0.6) 0%,
+    rgba(27, 38, 53, 0.8) 50%,
+    rgba(21, 29, 41, 0.6) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -1,0 +1,80 @@
+# ==============================================================================
+# HAV_SCRAP: Git & File Security Exclusions (Phase 11 Production Hardened)
+# ==============================================================================
+
+# Python Environments & Artifacts
+backend/venv/
+backend/env/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Database & Local Storage (Never commit production records or backups)
+*.sqlite
+*.sqlite3
+*.db
+data/*.db
+data/*.sqlite3
+data/hav_scrap.db
+data/backups/
+data/exports/
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Persistent Browser Profile & Credentials (CWE-312 Protection)
+data/browser_profile/
+browser_profile/
+.playwright/
+playwright-browsers/
+pw-browsers/
+browser_session/
+storage_state.json
+
+# Application Logs (Never commit logs which may hold execution traces)
+logs/
+*.log
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+backend/.env
+
+# Node.js & Frontend Artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.npm
+.eslintcache
+
+# Operating System & IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
